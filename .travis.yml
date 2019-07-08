@@ -13,7 +13,8 @@ jobs:
       language: java
       jdk: openjdk11
       install: skip
-      script: chmod 777 | ./gradlew clean build
+      before_script: chmod 777 gradlew
+      script: ./gradlew clean build
       before_deploy:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
