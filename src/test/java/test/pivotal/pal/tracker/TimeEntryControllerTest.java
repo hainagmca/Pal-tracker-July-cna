@@ -76,6 +76,7 @@ public class TimeEntryControllerTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
+
     @Test
     public void testList() {
         List<TimeEntry> expected = asList(
