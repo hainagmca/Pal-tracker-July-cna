@@ -2,7 +2,7 @@
 
 set -e
 
-app_name="${1:-pal-tracker}"
+app_name="${1:-pal-tracker-env}"
 script_dir="${2:-.}"
 service_name="${3:-tracker-database}"
 service_key="${4:-flyway-migration-key}"
