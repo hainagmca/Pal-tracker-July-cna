@@ -34,6 +34,7 @@ jobs:
     - stage: deploy to cf
       language: java
       before_install:
+        - chmod 777 gradlew
         - wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
         - echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
         - sudo apt-get update
@@ -41,9 +42,11 @@ jobs:
         - sudo apt-get -y install jq
         - curl https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/5.1.1/flyway-commandline-5.1.1-linux-x64.tar.gz | tar xvz
       script:
+        - chmod 777 gradlew
         - echo "Downloading $RELEASE_TAG"
         - wget -P build/libs https://github.com/$GITHUB_USERNAME//releases/download/$RELEASE_TAG/.jar
       before_deploy:
+        - chmod 777 gradlew
         - echo "Deploying $RELEASE_TAG to Cloud Foundry"
       before_script:
         - chmod 777 gradlew
