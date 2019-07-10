@@ -44,7 +44,7 @@ jobs:
       script:
         - chmod 777 gradlew
         - echo "Downloading $RELEASE_TAG"
-        - wget -P build/libs https://github.com/$GITHUB_USERNAME//releases/download/$RELEASE_TAG/pal-tracker.jar
+        - - wget -P build/libs https://github.com/$GITHUB_USERNAME/Pal-tracker-July-cna/releases/download/$RELEASE_TAG/pal-tracker.jar
       before_deploy:
         - chmod 777 gradlew
         - echo "Deploying $RELEASE_TAG to Cloud Foundry"
